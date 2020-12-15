@@ -3,4 +3,44 @@
   <groupId>ec.ups.edu.examen</groupId>
   <artifactId>notificacionescliente</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  
+  <dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.wildfly</groupId>
+				<artifactId>wildfly-ejb-client-bom</artifactId>
+				<version>21.0.1.Final</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>org.wildfly</groupId>
+			<artifactId>wildfly-naming</artifactId>
+			<version>14.0.1.Final</version>
+		</dependency>
+
+		<!-- JBoss EJB client API jar. We use runtime scope because the EJB client 
+			API isn't directly used in this example. We just need it in our runtime classpath -->
+		<dependency>
+			<groupId>org.jboss</groupId>
+			<artifactId>jboss-ejb-client</artifactId>
+			<version>4.0.36.Final</version>
+			<scope>runtime</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.wildfly.wildfly-http-client</groupId>
+			<artifactId>wildfly-http-client-common</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.wildfly.wildfly-http-client</groupId>
+			<artifactId>wildfly-http-naming-client</artifactId>
+		</dependency>
+
+	</dependencies>
 </project>
